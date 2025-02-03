@@ -122,6 +122,11 @@ git clone https://github.com/aminatanimashaun31/gameday-notifications.git
 9. Click Create Function.
 
 **Set Up Automation with Eventbridge**
+1. Navigate to the Eventbridge service in the AWS Management Console.
+2. Go to Rules → Create Rule.
+3. Select Event Source: Schedule.
+4. Set the cron schedule for when you want updates (e.g., hourly).
+5. Under Targets, select the Lambda function (gd_notifications) and save the rule.
 
 
 
