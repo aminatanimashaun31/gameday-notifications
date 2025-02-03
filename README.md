@@ -63,19 +63,36 @@ Next, you configure your AWS CLI with the ACCESS KEY ID and ACCESS SECRET KEY go
 aws configure
 ```
 ## Setup Instructions
-1. Clone the repository
+## Clone the repository
 ```bash
-git clone https://github.com/aminatanimashaun31/weather-dashboard.git
+git clone https://github.com/aminatanimashaun31/gameday-notifications.git
 ```
-2. Install dependencies
-```bash
-pip install -r requirements.txt
-```
-3. Configure environment variables (.env):
-```bash
-OPENWEATHER_API_KEY=your_api_key
-AWS_BUCKET_NAME=your_bucket_name
-```
+## Create an SNS Topic
+1. Open the AWS Management Console.
+2. Navigate to the SNS service.
+3. Click Create Topic and select Standard as the topic type.
+4.Name the topic (e.g., gd_topic) and note the ARN.
+5. Click Create Topic.
+ ![image](https://github.com/user-attachments/assets/3c27cc14-fe24-4971-b897-f1d2b8176a3b)
+
+## Add Subscriptions to the SNS Topic
+After creating the topic, click on the topic name from the list.
+Navigate to the Subscriptions tab and click Create subscription.
+Select a Protocol:
+For Email:
+Choose Email.
+Enter a valid email address.
+For SMS (phone number):
+Choose SMS.
+Enter a valid phone number in international format (e.g., +1234567890).
+Click Create Subscription.
+If you added an Email subscription:
+Check the inbox of the provided email address.
+Confirm the subscription by clicking the confirmation link in the email.
+For SMS, the subscription will be immediately active after creation.
+
+
+
 4. Run the application
 ```bash
 python src/weather_dashboard.py
