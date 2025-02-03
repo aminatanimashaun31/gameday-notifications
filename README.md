@@ -8,14 +8,21 @@ This project is an alert system that sends real-time NBA game day score notifica
 - Sends formatted score updates to subscribers via SMS/Email using Amazon SNS.
 - Scheduled automation for regular updates using Amazon EventBridge.
 - Designed with security in mind, following the principle of least privilege for IAM roles.
-- 
+  
+### Prerequisites
+- Free account with subscription and API Key at <a href="https://sportsdata.io/">here</a>
+- Personal AWS account with basic understanding of AWS and Python
+
 ### Technical Architecture
-![image](https://github.com/user-attachments/assets/c61285e7-c86d-4761-864c-539e2aecb944)
+![image](https://github.com/user-attachments/assets/ff6f0e81-c188-4981-9403-c3e0bc777158)
+
 ## Technologies
- - **Language**: Python 3.x
-- **Cloud Provider**: AWS (S3)
-- **External API**: OpenWeather API
-- **Dependencies**: 
+- **Cloud Provider**: AWS
+- **Core Services**: SNS, Lambda, EventBridge
+- **External API**: NBA Game API (SportsData.io)
+- **Programming Language**: Python 3.x
+- **IAM Security**:
+- Least privilege policies for Lambda, SNS, and EventBridge.
   - `boto3` (AWS SDK)
   - `python-dotenv`
   - `requests`
