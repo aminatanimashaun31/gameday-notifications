@@ -52,16 +52,7 @@ game-day-notifications/
 - Add more cities
 - Create automated testing
 - Set up CI/CD pipeline
-## How to navigate all of it as a beginner
-### Prerequisites
-Before you can work on the project, you need to have certain things setup on your local machine. This includes but not limited to the following:
-- **VS code Editor** you can see documentation <a href="https://code.visualstudio.com/download" target="_blank">here</a>
-- **AWS CLI** Installed you can see documentation <a href="https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html" target="_blank">here</a>
 
-Next, you configure your AWS CLI with the ACCESS KEY ID and ACCESS SECRET KEY gotten from your AWS console IAM USER by doing:
-```bash
-aws configure
-```
 ## Setup Instructions
 ## Clone the repository
 ```bash
@@ -92,16 +83,47 @@ git clone https://github.com/aminatanimashaun31/gameday-notifications.git
 - Confirm the subscription by clicking the confirmation link in the email.
 6. For SMS, the subscription will be immediately active after creation.
 
+**Create the SNS Publish Policy**
+1. Open the IAM service in the AWS Management Console.
+2. Navigate to Policies → Create Policy.
+3. Click JSON and paste the JSON policy from gd_sns_policy.json file
+4. Replace REGION and ACCOUNT_ID with your AWS region and account ID.
+5. Click Next: Tags (you can skip adding tags).
+6. Click Next: Review.
+7.Enter a name for the policy (e.g., gd_sns_policy).
+8.Review and click Create Policy.
+
+**Create an IAM Role for Lambda**
+1. Open the IAM service in the AWS Management Console.
+2.Click Roles → Create Role.
+3. Select AWS Service and choose Lambda.
+4. Attach the following policies:
+- SNS Publish Policy (gd_sns_policy) (created in the previous step).
+- Lambda Basic Execution Role (AWSLambdaBasicExecutionRole) (an AWS managed policy).
+5. Click Next: Tags (you can skip adding tags).
+6. Click Next: Review.
+7. Enter a name for the role (e.g., gd_role).
+8. Review and click Create Role.
+9. Copy and save the ARN of the role for use in the Lambda function.
+
+**Deploy the Lambda Function**
+1. Open the AWS Management Console and navigate to the Lambda service.
+2. Click Create Function.
+3. Select Author from Scratch.
+4. Enter a function name (e.g., gd_notifications).
+5. Choose Python 3.x as the runtime.
+6. Assign the IAM role created earlier (gd_role) to the function.
+7. Under the Function Code section:
+- Copy the content of the src/gd_notifications.py file from the repository.
+- Paste it into the inline code editor.
+8. Under the Environment Variables section, add the following:
+- NBA_API_KEY: your NBA API key.
+- SNS_TOPIC_ARN: the ARN of the SNS topic created earlier.
+9. Click Create Function.
+
+**Set Up Automation with Eventbridge**
 
 
-4. Run the application
-```bash
-python src/weather_dashboard.py
-```
-![image](https://github.com/user-attachments/assets/873b198d-ec2f-4a48-a095-be94d2fd0c68)
-### **Weather Dashboard: AWS S3 Bucket Overview**
-The following screenshot shows the configured S3 bucket (`weather-data-aminat`) that stores the weather data collected during this project.
-![image](https://github.com/user-attachments/assets/b442d41e-3cf0-4e7d-bbd2-9e91b6444877)
 
-![image](https://github.com/user-attachments/assets/0ab83386-1bfd-4d0a-a2d1-1ec0e3f6915a)
+
 
