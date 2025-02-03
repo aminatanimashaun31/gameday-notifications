@@ -1,10 +1,7 @@
-# 30 Days DevOps Challenge - Weather Dashboard
- 
- Day 1: Building a weather data collection system using AWS S3 and OpenWeather API
+# NBA Game Day Notifications / Sports Alerts System
 
-## Weather Data Collection System - DevOps Day 1 Challenge
 ### Project Overview
-This project is a Weather Data Collection System that demonstrates core DevOps principles by combining:
+This project is an alert system that sends real-time NBA game day score notifications to subscribed users via SMS/Email. It leverages Amazon SNS, AWS Lambda and Python, Amazon EvenBridge and NBA APIs to provide sports fans with up-to-date game information. The project demonstrates cloud computing principles and efficient notification mechanisms.
 
  - **External API Integration** (OpenWeather API)
 - **Cloud Storage** (AWS S3)
