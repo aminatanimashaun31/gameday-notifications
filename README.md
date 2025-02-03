@@ -22,23 +22,20 @@ This project is an alert system that sends real-time NBA game day score notifica
 - **External API**: NBA Game API (SportsData.io)
 - **Programming Language**: Python 3.x
 - **IAM Security**:
-- Least privilege policies for Lambda, SNS, and EventBridge.
-  - `boto3` (AWS SDK)
-  - `python-dotenv`
-  - `requests`
+ - `Least privilege policies for Lambda, SNS, and EventBridge.`
  
 ## Project Structure
 
 ```plaintext
-weather-dashboard/
-    src/
-        __init__.py
-        weather_dashboard.py
-    tests/
-    data/
-    .env
-    .gitignore
-    requirements.txt
+game-day-notifications/
+├── src/
+│   ├── gd_notifications.py          # Main Lambda function code
+├── policies/
+│   ├── gb_sns_policy.json           # SNS publishing permissions
+│   ├── gd_eventbridge_policy.json   # EventBridge to Lambda permissions
+│   └── gd_lambda_policy.json        # Lambda execution role permissions
+├── .gitignore
+└── README.md                        # Project documentation
 
 ```
 ## What I Learned
