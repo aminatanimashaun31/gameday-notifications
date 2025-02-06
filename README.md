@@ -68,7 +68,7 @@ git clone https://github.com/aminatanimashaun31/gameday-notifications.git
 - Confirm the subscription by clicking the confirmation link in the email.
 6. For SMS, the subscription will be immediately active after creation.
 
-**Create the SNS Publish Policy**
+## Create the SNS Publish Policy
 1. Open the IAM service in the AWS Management Console.
 2. Navigate to Policies → Create Policy.
 3. Click JSON and paste the JSON policy from gd_sns_policy.json file
@@ -78,7 +78,7 @@ git clone https://github.com/aminatanimashaun31/gameday-notifications.git
 7.Enter a name for the policy (e.g., gd_sns_policy).
 8.Review and click Create Policy.
 
-**Create an IAM Role for Lambda**
+## Create an IAM Role for Lambda
 1. Open the IAM service in the AWS Management Console.
 2.Click Roles → Create Role.
 3. Select AWS Service and choose Lambda.
@@ -91,7 +91,7 @@ git clone https://github.com/aminatanimashaun31/gameday-notifications.git
 8. Review and click Create Role.
 9. Copy and save the ARN of the role for use in the Lambda function.
 
-**Deploy the Lambda Function**
+## Deploy the Lambda Function
 1. Open the AWS Management Console and navigate to the Lambda service.
 2. Click Create Function.
 3. Select Author from Scratch.
