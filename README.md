@@ -38,20 +38,6 @@ game-day-notifications/
 └── README.md                        # Project documentation
 
 ```
-## What I Learned
-
-- AWS S3 bucket creation and management
-- Environment variable management for secure API keys
-- Python best practices for API integration
-- Git workflow for project development**
-- Error handling in distributed systems
-- Cloud resource management
-## Future Enhancements
-- Add weather forecasting
-- Implement data visualization
-- Add more cities
-- Create automated testing
-- Set up CI/CD pipeline
 
 ## Setup Instructions
 ## Clone the repository
@@ -64,7 +50,6 @@ git clone https://github.com/aminatanimashaun31/gameday-notifications.git
 3. Click Create Topic and select Standard as the topic type.
 4. Name the topic (e.g., gd_topic) and note the ARN.
 5. Click Create Topic.
- ![image](https://github.com/user-attachments/assets/3c27cc14-fe24-4971-b897-f1d2b8176a3b)
 
 ## Add Subscriptions to the SNS Topic
 1. After creating the topic, click on the topic name from the list.
@@ -128,6 +113,22 @@ git clone https://github.com/aminatanimashaun31/gameday-notifications.git
 4. Set the cron schedule for when you want updates (e.g., hourly).
 5. Under Targets, select the Lambda function (gd_notifications) and save the rule.
 
+**Test the System**
+1. Open the Lambda function in the AWS Management Console.
+2. Create a test event to simulate execution.
+3. Run the function and check CloudWatch Logs for errors.
+4. Verify that SMS notifications are sent to the subscribed users.
+
+**What I Learned**
+1. Designing a notification system with AWS SNS and Lambda.
+2. Securing AWS services with least privilege IAM policies.
+3. Automating workflows using EventBridge.
+4. Integrating external APIs into cloud-based workflows.
+
+**Future Enhancements**
+1. Add NFL score alerts for extended functionality.
+2. Store user preferences (teams, game types) in DynamoDB for personalized alerts.
+3. Implement a web UI
 
 
 
