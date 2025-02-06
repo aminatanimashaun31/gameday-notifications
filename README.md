@@ -106,26 +106,26 @@ git clone https://github.com/aminatanimashaun31/gameday-notifications.git
 - SNS_TOPIC_ARN: the ARN of the SNS topic created earlier.
 9. Click Create Function.
 
-**Set Up Automation with Eventbridge**
+## Set Up Automation with Eventbridge
 1. Navigate to the Eventbridge service in the AWS Management Console.
 2. Go to Rules → Create Rule.
 3. Select Event Source: Schedule.
 4. Set the cron schedule for when you want updates (e.g., hourly).
 5. Under Targets, select the Lambda function (gd_notifications) and save the rule.
 
-**Test the System**
+## Test the System
 1. Open the Lambda function in the AWS Management Console.
 2. Create a test event to simulate execution.
 3. Run the function and check CloudWatch Logs for errors.
 4. Verify that SMS notifications are sent to the subscribed users.
 
-**What I Learned**
+## What I Learned
 1. Designing a notification system with AWS SNS and Lambda.
 2. Securing AWS services with least privilege IAM policies.
 3. Automating workflows using EventBridge.
 4. Integrating external APIs into cloud-based workflows.
 
-**Future Enhancements**
+## Future Enhancements
 1. Add NFL score alerts for extended functionality.
 2. Store user preferences (teams, game types) in DynamoDB for personalized alerts.
 3. Implement a web UI
