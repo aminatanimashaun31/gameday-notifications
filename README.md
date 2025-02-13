@@ -80,7 +80,7 @@ git clone https://github.com/aminatanimashaun31/gameday-notifications.git
 
 ## Create an IAM Role for Lambda
 1. Open the IAM service in the AWS Management Console.
-2.Click Roles → Create Role.
+2. Click Roles → Create Role.
 3. Select AWS Service and choose Lambda.
 4. Attach the following policies:
 - SNS Publish Policy (gd_sns_policy) (created in the previous step).
