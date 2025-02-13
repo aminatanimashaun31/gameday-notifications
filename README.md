@@ -75,8 +75,8 @@ git clone https://github.com/aminatanimashaun31/gameday-notifications.git
 4. Replace REGION and ACCOUNT_ID with your AWS region and account ID.
 5. Click Next: Tags (you can skip adding tags).
 6. Click Next: Review.
-7.Enter a name for the policy (e.g., gd_sns_policy).
-8.Review and click Create Policy.
+7. Enter a name for the policy (e.g., gd_sns_policy).
+8. Review and click Create Policy.
 
 ## Create an IAM Role for Lambda
 1. Open the IAM service in the AWS Management Console.
