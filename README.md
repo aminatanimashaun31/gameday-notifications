@@ -71,11 +71,11 @@ git clone https://github.com/aminatanimashaun31/gameday-notifications.git
 ## Create the SNS Publish Policy
 1. Open the IAM service in the AWS Management Console.
 2. Navigate to Policies → Create Policy.
-3. Click JSON and paste the JSON policy from gd_sns_policy.json file
+3. Click JSON and paste the JSON policy from gameday_sns_policy.json file
 4. Replace REGION and ACCOUNT_ID with your AWS region and account ID.
 5. Click Next: Tags (you can skip adding tags).
 6. Click Next: Review.
-7. Enter a name for the policy (e.g., gd_sns_policy).
+7. Enter a name for the policy (e.g., gameday_sns_policy).
 8. Review and click Create Policy.
 
 ## Create an IAM Role for Lambda
@@ -83,7 +83,7 @@ git clone https://github.com/aminatanimashaun31/gameday-notifications.git
 2. Click Roles → Create Role.
 3. Select AWS Service and choose Lambda.
 4. Attach the following policies:
-- SNS Publish Policy (gd_sns_policy) (created in the previous step).
+- SNS Publish Policy (gameday_sns_policy) (created in the previous step).
 - Lambda Basic Execution Role (AWSLambdaBasicExecutionRole) (an AWS managed policy).
 5. Click Next: Tags (you can skip adding tags).
 6. Click Next: Review.
@@ -95,11 +95,11 @@ git clone https://github.com/aminatanimashaun31/gameday-notifications.git
 1. Open the AWS Management Console and navigate to the Lambda service.
 2. Click Create Function.
 3. Select Author from Scratch.
-4. Enter a function name (e.g., gd_notifications).
+4. Enter a function name (e.g., gameday_notifications).
 5. Choose Python 3.x as the runtime.
 6. Assign the IAM role created earlier (gd_role) to the function.
 7. Under the Function Code section:
-- Copy the content of the src/gd_notifications.py file from the repository.
+- Copy the content of the src/gameday_notifications.py file from the repository.
 - Paste it into the inline code editor.
 8. Under the Environment Variables section, add the following:
 - NBA_API_KEY: your NBA API key.
@@ -111,7 +111,7 @@ git clone https://github.com/aminatanimashaun31/gameday-notifications.git
 2. Go to Rules → Create Rule.
 3. Select Event Source: Schedule.
 4. Set the cron schedule for when you want updates (e.g., hourly).
-5. Under Targets, select the Lambda function (gd_notifications) and save the rule.
+5. Under Targets, select the Lambda function (gameday_notifications) and save the rule.
 
 ## Test the System
 1. Open the Lambda function in the AWS Management Console.
@@ -129,6 +129,10 @@ git clone https://github.com/aminatanimashaun31/gameday-notifications.git
 1. Add NFL score alerts for extended functionality.
 2. Store user preferences (teams, game types) in DynamoDB for personalized alerts.
 3. Implement a web UI
+
+## Technical Article
+For a detailed implementation, read the accompanying technical article here.
+https://medium.com/@aminatanimashaun31/c6d0260eab25
 
 
 
